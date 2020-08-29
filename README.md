@@ -10,4 +10,6 @@ The following files are present in the repository:
 
 Run the code run_analysis.R. It will automatically load the required data sets, subset the required variables, and clean them.
 
+Please note, the file "UCI HAR Dataset" must be in the working directory for the program to run.
+
 The tidy data will be generated and stored automatically in a file named Tidy_Data.txt. It coltains 180 observations and 68 variables.

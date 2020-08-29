@@ -1,6 +1,6 @@
 ## Loading test datasets
 dr<-getwd()
-setwd(dir()[4])
+setwd("./UCI HAR Dataset")
 xtest<-read.table("./test/X_test.txt")
 subtest<-read.table("./test/subject_test.txt")
 ytest<-read.table("./test/y_test.txt")
@@ -37,7 +37,6 @@ names(merge_x)<-gsub("-std()"," Std",names(merge_x),fixed=TRUE)
 ## Merging all tables
 data<-cbind(merge_sub,merge_y,merge_x)
 names(data)[c(1,2)]<-c("Subjects","Activity")
-write.table(data,file="Merged_Data.txt")
 
 ## Creating tidy data
 tidy<-matrix(nrow=182,ncol=68,dimnames=list(c(1:182),names(data)))
@@ -52,4 +51,4 @@ for(sub in sort(unique(merge_sub)))
     
   }
 }
-write.table(tidy,file="Tidy_Data.txt")
+write.table(tidy,file="Tidy_Data.txt",row.name=FALSE)
